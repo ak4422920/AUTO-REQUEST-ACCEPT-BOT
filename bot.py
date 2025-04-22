@@ -32,27 +32,27 @@ from leave import register_leave_handler
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from pymongo.errors import PyMongoError
-from configs import Spidey, temp
+from configs import Spidey, temp, START_IMG
+from pyrogram.enums import ChatMembersFilter
 
 
 # Configuration do not remove otherwise bot will be crashed
 API_ID = ""
 API_HASH = ""
 BOT_TOKEN = ""
-CHANNEL_IDS = [-1001959922658, -1002433552221, -1002470391435]
+CHANNEL_IDS = [-1001959922658, -1002433552221, -1002470391435, -1002252585703]
 LOG_CHANNEL = -1002294764885
 ADMINS = [5518489725]
 MONGO_URI = ""
 
 
 # Image URLs
-welcome_image_url = "https://i.ibb.co/CPxdkHR/IMG-20240818-192201-633.jpg"
+xyz_welome_image_url = ""
 background_image_url = "https://i.ibb.co/RymDMxS/66e7d1b6.jpg"
 welcome_image = "https://envs.sh/v3t.jpg"
 
 # Initialize the bot
 app = Client("approver_bot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
-
 
 # Approve join requests and send a welcome message
 @app.on_chat_join_request(filters.group | filters.channel)
@@ -97,76 +97,86 @@ async def start(bot, message):
             temp.B_NAME = (await bot.get_me()).first_name  
 
     except Exception as e:
-        print(f"Error sending reaction: {e}")  
+        print(f"Error fetching bot details: {e}")  
 
     user_id = message.from_user.id
     user_name = message.from_user.first_name
 
+    is_new = False
     if not already_db(user_id):
         add_user(user_id, user_name)
-                
-        Spidey = (
-            f"**#New_User {temp.B_NAME}**\n\n"
-            f"≈ **ID:** `{user_id}`\n"
-            f"≈ **Name:** {message.from_user.mention}\n"
-            f"≈ **Username:** @{message.from_user.username if message.from_user.username else 'None'}\n"
-            f"≈ **Group:** {message.chat.title if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP] else 'Private Chat'}"
+        is_new = True
+
+    if is_new:
+        from datetime import datetime
+        Spidey = script.NEW_USER_LOG.format(
+            bot_name=temp.B_NAME,
+            user_id=user_id,
+            user_mention=message.from_user.mention,
+            username=f"@{message.from_user.username}" if message.from_user.username else "None",
+            chat_title=message.chat.title if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP] else "Private Chat",
+            time=datetime.now().strftime("%d-%b-%Y %I:%M %p")
         )
         await bot.send_message(LOG_CHANNEL, Spidey)
 
-    try:        
+    # If in a group, send the start message without force sub check
+    if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
+        buttons = [
+            [InlineKeyboardButton('• ᴀᴅᴅ ᴍᴇ ᴛᴏ ᴜʀ ᴄʜᴀᴛ •', url=f'http://t.me/{temp.U_NAME}?startgroup=true')],
+            [
+                InlineKeyboardButton('• ᴍᴀsᴛᴇʀ •', url="https://t.me/hacker_x_official_777"),
+                InlineKeyboardButton('• sᴜᴘᴘᴏʀᴛ •', url='https://t.me/deathchatting_world')
+            ],
+            [InlineKeyboardButton('• ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ •', url="https://t.me/+9tdbATrOMLNlN2I1")]
+        ]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await message.reply(script.GSTART_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
+        return  
+
+    # In private chat, check force subscription
+    try:
         for channel in CHANNEL_IDS:
             try:
                 await app.get_chat_member(channel, message.from_user.id)
             except UserNotParticipant:
                 raise UserNotParticipant 
 
-        if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
-            buttons = [
-                [InlineKeyboardButton('• ᴀᴅᴅ ᴍᴇ ᴛᴏ ᴜʀ ᴄʜᴀᴛ •', url=f'http://t.me/{temp.U_NAME}?startgroup=true')],
-                [
-                    InlineKeyboardButton('• ᴍᴀsᴛᴇʀ •', url="https://t.me/hacker_x_official_777"),
-                    InlineKeyboardButton('• sᴜᴘᴘᴏʀᴛ •', url='https://t.me/SPIDEYOFFICIAL_777')
-                ],
-                [InlineKeyboardButton('• ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ •', url="https://t.me/+9tdbATrOMLNlN2I1")]
+        import random
+        welcome_image_url = random.choice(START_IMG)
+
+        m = await message.reply_text("<b>ʜᴇʟʟᴏ ʙᴀʙʏ, ʜᴏᴡ ᴀʀᴇ ʏᴏᴜ \nᴡᴀɪᴛ ᴀ ᴍᴏᴍᴇɴᴛ ʙᴀʙʏ ....</b>")
+        await asyncio.sleep(0.4)
+        await m.edit_text("🎊")
+        await asyncio.sleep(0.5)
+        await m.edit_text("⚡")
+        await asyncio.sleep(0.5)
+        await m.edit_text("<b>ꜱᴛᴀʀᴛɪɴɢ ʙᴀʙʏ...</b>")
+        await asyncio.sleep(0.4)
+        await m.delete()
+
+        m = await message.reply_sticker("CAACAgUAAxkBAAIdBGd7qZ7kMBTPT2YAAdnPRDtBSw9jwAACqwQAAr7vuFdHULNVi6H4nB4E")
+        await asyncio.sleep(3)
+        await m.delete()
+
+        keyboard = InlineKeyboardMarkup(
+            [
+                [InlineKeyboardButton("➕ Aᴅᴅ Mᴇ ᴛᴏ Yᴏᴜʀ Cʜᴀɴɴᴇʟ ➕", url="https://t.me/SPIDER_MAN_GAMING_bot?startchannel=Bots4Sale&admin=invite_users+manage_chat")],
+                [InlineKeyboardButton("🚀 Cʜᴀɴɴᴇʟ", url="https://t.me/+cMlrPqMjUwtmNTI1"),
+                 InlineKeyboardButton("💬 Sᴜᴘᴘᴏʀᴛ", callback_data="group_info")],
+                [InlineKeyboardButton("ℹ️ Aʙᴏᴜᴛ", callback_data="about"),
+                 InlineKeyboardButton("📃 Fᴇᴀᴛᴜʀᴇs", callback_data="features")],
+                [InlineKeyboardButton("➕  Aᴅᴅ Mᴇ ᴛᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ➕", url="https://t.me/SPIDER_MAN_GAMING_bot?startgroup=true")]
             ]
-            reply_markup = InlineKeyboardMarkup(buttons)
-            await message.reply(script.GSTART_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
-            return  
+        )
 
-        if message.chat.type == enums.ChatType.PRIVATE:
-            m = await message.reply_text("<b>ʜᴇʟʟᴏ ʙᴀʙʏ, ʜᴏᴡ ᴀʀᴇ ʏᴏᴜ \nᴡᴀɪᴛ ᴀ ᴍᴏᴍᴇɴᴛ ʙᴀʙʏ ....</b>")
-            await asyncio.sleep(0.4)
-            await m.edit_text("🎊")
-            await asyncio.sleep(0.5)
-            await m.edit_text("⚡")
-            await asyncio.sleep(0.5)
-            await m.edit_text("<b>ꜱᴛᴀʀᴛɪɴɢ ʙᴀʙʏ...</b>")
-            await asyncio.sleep(0.4)
-            await m.delete()
-
-            m = await message.reply_sticker("CAACAgUAAxkBAAIdBGd7qZ7kMBTPT2YAAdnPRDtBSw9jwAACqwQAAr7vuFdHULNVi6H4nB4E")
-            await asyncio.sleep(3)
-            await m.delete()
-
-            keyboard = InlineKeyboardMarkup(
-                [
-                    [InlineKeyboardButton("➕ Aᴅᴅ Mᴇ ᴛᴏ Yᴏᴜʀ Cʜᴀɴɴᴇʟ ➕", url="https://t.me/SPIDER_MAN_GAMING_bot?startchannel=Bots4Sale&admin=invite_users+manage_chat")],
-                    [InlineKeyboardButton("🚀 Cʜᴀɴɴᴇʟ", url="https://t.me/+cMlrPqMjUwtmNTI1"),
-                     InlineKeyboardButton("💬 Sᴜᴘᴘᴏʀᴛ", callback_data="group_info")],
-                    [InlineKeyboardButton("ℹ️ Aʙᴏᴜᴛ", callback_data="about"),
-                     InlineKeyboardButton("📃 Fᴇᴀᴛᴜʀᴇs", callback_data="features")],
-                    [InlineKeyboardButton("➕  Aᴅᴅ Mᴇ ᴛᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ➕", url="https://t.me/SPIDER_MAN_GAMING_bot?startgroup=true")]
-                ]
-            )
-
-            await message.reply_photo(
-                photo=welcome_image_url,
-                caption=(script.START_MSG.format(message.from_user.mention)),
-                reply_markup=keyboard,
-            )
+        await message.reply_photo(
+            photo=welcome_image_url,
+            caption=(script.START_MSG.format(message.from_user.mention)),
+            reply_markup=keyboard,
+        )
 
     except UserNotParticipant:
+        import random
         buttons = []
         for channel in CHANNEL_IDS:
             try:
@@ -184,7 +194,7 @@ async def start(bot, message):
 
         buttons.append([InlineKeyboardButton("🔄 ᴄʜᴇᴄᴋ ᴀɢᴀɪɴ", callback_data="chk")])
         keyboard = InlineKeyboardMarkup(buttons)
-        
+
         await message.reply_photo(
             photo=welcome_image,
             caption=f"<b>⚠️ Access Denied! ⚠️\n\n🔥 Hello {message.from_user.mention}!\n\n"
@@ -192,6 +202,7 @@ async def start(bot, message):
                     "👉 [✨ Join Now ✨](https://t.me/SPIDEYOFFICIAL777)</b>",
             reply_markup=keyboard
         )
+
 
 
 
@@ -591,12 +602,76 @@ async def send_msg(bot, message):
                                  "ꜰᴏʀ ᴇɢ - <code>/send user_id1 user_id2</code></b>")
 
                                  
+@Client.on_message(filters.command(["info"]))
+async def who_is(client, message):
+    status_message = await message.reply_text("`Fetching user info...`")
+    await status_message.edit("`Processing user info...`")
 
+    
+    from_user_id = message.reply_to_message.from_user.id if message.reply_to_message else message.from_user.id
+    
+    try:
+        from_user = await client.get_users(from_user_id)
+    except Exception as error:
+        await status_message.edit(f"❌ Error: {error}")
+        return
+
+    if not from_user:
+        return await status_message.edit("❌ No valid user_id/message specified.")
+
+    message_out_str = f"""
+<b>➲ First Name:</b> {from_user.first_name}
+<b>➲ Last Name:</b> {from_user.last_name or "None"}
+<b>➲ Telegram ID:</b> <code>{from_user.id}</code>
+<b>➲ Username:</b> @{from_user.username or "None"}
+<b>➲ Data Centre:</b> <code>{getattr(from_user, 'dc_id', 'N/A')}</code>
+<b>➲ Profile Link:</b> <a href='tg://user?id={from_user.id}'><b>Click Here</b></a>
+"""
+
+    if message.chat.type in (enums.ChatType.SUPERGROUP, enums.ChatType.CHANNEL):
+        try:
+            chat_member_p = await message.chat.get_member(from_user.id)
+            joined_date = (
+                chat_member_p.joined_date.strftime("%Y.%m.%d %H:%M:%S") 
+                if chat_member_p.joined_date else "Unknown"
+            )
+            message_out_str += f"\n<b>➲ Joined this chat on:</b> <code>{joined_date}</code>"
+        except:
+            pass
+
+    # **Buttons**
+    buttons = [[InlineKeyboardButton('🔐 Close', callback_data='close_data')]]
+    reply_markup = InlineKeyboardMarkup(buttons)
+
+    # **Profile Photo असेल तर डाउनलोड करा आणि पाठवा**
+    if from_user.photo:
+        photo = await client.download_media(from_user.photo.big_file_id)
+        await message.reply_photo(
+            photo=photo,
+            caption=message_out_str,
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
+        os.remove(photo)
+    else:
+        await message.reply_text(
+            text=message_out_str,
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
+
+    await status_message.delete()
+
+@Client.on_callback_query(filters.regex("close_data"))
+async def close_callback(client, callback_query):
+    await callback_query.message.delete()
+
+        
 @app.on_message(filters.command("help"))
 async def help_command(client, message):
     await message.reply_text(script.HELP_TXT)
-
-
+        
+        
 if __name__ == "__main__":
     register_leave_handler(app)
     logging.basicConfig(level=logging.INFO)
