@@ -4,7 +4,7 @@
 
 class script(object):
 
-    START_MSG = """<b>🦊 Hᴇʟʟᴏ {}!\n\nI'ᴍ ᴀɴ ᴀᴜᴛᴏ-ᴀᴘᴘʀᴏᴠᴇ [ᴀᴅᴍɪɴ](https://t.me/hacker_x_official_777) [Jᴏɪɴ Rᴇǫᴜᴇsᴛs](https://t.me/telegram/153) ʙᴏᴛ.\nI ᴄᴀɴ ᴀᴘᴘʀᴏᴠᴇ ᴜsᴇʀs ɪɴ Gʀᴏᴜᴘs/Cʜᴀᴛs. Aᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ᴄʜᴀᴛ ᴀɴᴅ [ᴘʀᴏᴍᴏᴛᴇ ᴍᴇ ᴛᴏ ᴀᴅᴍɪɴ]()\n\n__ᴘᴏᴡᴇʀᴇᴅ ʙʏ: [@Hᴀᴄᴋᴇʀ_x_ᴏғғɪᴄɪᴀʟ_𝟽𝟽𝟽](https://t.me/hacker_x_official_777)__</b>"""
+    START_MSG = """<b>🦊 Hᴇʟʟᴏ {}!\n\nI'ᴍ ᴀɴ ᴀᴜᴛᴏ-ᴀᴘᴘʀᴏᴠᴇ [ᴀᴅᴍɪɴ](https://t.me/hacker_x_official_777) [Jᴏɪɴ Rᴇǫᴜᴇsᴛs](https://t.me/telegram/153) ʙᴏᴛ.\nI ᴄᴀɴ ᴀᴘᴘʀᴏᴠᴇ ᴜsᴇʀs ɪɴ Gʀᴏᴜᴘs/Cʜᴀᴛs. Aᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ᴄʜᴀᴛ ᴀɴᴅ [ᴘʀᴏᴍᴏᴛᴇ ᴍᴇ ᴛᴏ ᴀᴅᴍɪɴ]()\n\nn<blockquote>🌿 ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ :  <a href='https://telegram.me/Hacker_x_official_777'>ʜᴀᴄᴋᴇʀ_x_ᴏꜰꜰɪᴄɪᴀʟ_𝟽𝟽𝟽</a></blockquote></b>"""
     
     DISCLAIMER_TXT = """
 <b>      ᴀᴜᴛᴏ ʀᴇǫᴜᴇsᴛ ᴀᴄᴄᴇᴘᴛ ʙᴏᴛ
@@ -43,39 +43,40 @@ class script(object):
 © 𝟸𝟶𝟸𝟻 | <a href=https://t.me/SPIDEYOFFICIAL777'>sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ</a> , ᴀʟʟ ʀɪɢʜᴛs ʀᴇsᴇʀᴠᴇᴅ.
   
   <blockquote>🌿 ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href='https://telegram.me/Hacker_x_official_777'>ʜᴀᴄᴋᴇʀ_x_ᴏꜰꜰɪᴄɪᴀʟ_777</a></blockquote></b>"""
-     
-# Don't Remove Credit @spideyofficial777
-# Subscribe YouTube Channel For Amazing Bot @spidey_official_777
-# Ask Doubt on telegram @hacker_x_official_777
-   
+    
     ALERT_MSG = """ ⚡️ ʟɪᴠᴇ sʏsᴛᴇᴍ sᴛᴀᴛᴜs ⚡️\n\n❂ ʀᴀᴍ ●●●●●●●◌◌◌\n✇ ᴄᴘᴜ ●●●●●●●◌◌◌\n✪ ᴅᴀᴛᴀ ᴛʀᴀꜰɪᴄs ●●●●◌◌◌◌◌◌ 🛰\n\nᴠ𝟷.𝟶 [sᴛᴀʙʟᴇ] """
     
-    ABOUT_TXT = """<blockquote><b>‣ ᴍʏ ɴᴀᴍᴇ : <a href='https://telegram.me/Spidey_gaming_official_bot'>sᴘɪᴅᴇʏ_ɢᴀᴍɪɴɢ_ᴏғғɪᴄɪᴀʟ_ʙᴏᴛ</a>\n‣ ᴄʀᴇᴀᴛᴏʀ : <a href='https://telegram.me/Hacker_x_official_777'>ʜᴀᴄᴋᴇʀ_x_ᴏꜰꜰɪᴄɪᴀʟ_777</a>\n‣ ʟɪʙʀᴀʀʏ : ᴘʏʀᴏɢʀᴀᴍ\n‣ ʟᴀɴɢᴜᴀɢᴇ : ᴘʏᴛʜᴏɴ\n‣ ᴅᴀᴛᴀ ʙᴀsᴇ : ᴍᴏɴɢᴏ ᴅʙ\n‣ ʜᴏsᴛᴇᴅ ᴏɴ  : ᴀʟʟ ᴡᴇʙ\n‣ ʙᴜɪʟᴅ sᴛᴀᴛᴜs : ᴠ𝟷.𝟶 [sᴛᴀʙʟᴇ]</b></blockquote>"""    
+    ABOUT_TXT = """<blockquote><b>‣ ᴍʏ ɴᴀᴍᴇ : <a href='https://telegram.me/SPIDER_MAN_GAMING_bot'>sᴘɪᴅᴇʏ_ɢᴀᴍɪɴɢ_ᴏғғɪᴄɪᴀʟ_ʙᴏᴛ</a>\n‣ ᴄʀᴇᴀᴛᴏʀ : <a href='https://telegram.me/Hacker_x_official_777'>ʜᴀᴄᴋᴇʀ_x_ᴏꜰꜰɪᴄɪᴀʟ_777</a>\n‣ ʟɪʙʀᴀʀʏ : ᴘʏʀᴏɢʀᴀᴍ\n‣ ʟᴀɴɢᴜᴀɢᴇ : ᴘʏᴛʜᴏɴ\n‣ ᴅᴀᴛᴀ ʙᴀsᴇ : ᴍᴏɴɢᴏ ᴅʙ\n‣ ʜᴏsᴛᴇᴅ ᴏɴ  : ᴀʟʟ ᴡᴇʙ\n‣ ʙᴜɪʟᴅ sᴛᴀᴛᴜs : ᴠ𝟷.𝟶 [sᴛᴀʙʟᴇ]</b></blockquote>"""    
     
     CHANNELS = """
 <b>๏ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴs ɢɪᴠᴇɴ ʙᴇʟᴏᴡ ᴛᴏ ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟs ᴀɴᴅ ɢᴇᴛ ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴜs.</b>"""
 
-    FEATURES_TXT = """<b> ๏ Hᴇʀᴇ Aʀᴇ Oᴜʀ Uɴᴍᴀᴛᴄʜᴇᴅ Fᴇᴀᴛᴜʀᴇꜱ! 🚀 </b> """
+    FEATURES_TXT = """<b> ๏ ʜᴇʀᴇ ᴀʀᴇ ᴏᴜʀ ᴜɴᴍᴀᴛᴄʜᴇᴅ ғᴇᴀᴛᴜʀᴇꜱ! 🚀 </b> """
     
     HELP_TXT = """here is the help text"""
     
     OWNER_TEXT = """
 <b>━━━━━━━━━━━━━━━━━━━━━
 🚀 ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴀɴ ᴇʟɪᴛᴇ ᴅᴇᴠ 🚀  
-👑 Oᴡɴᴇʀ:  [@ʜᴀᴄᴋᴇʀ_x_ᴏғғɪɪᴀʟ_𝟽𝟽𝟽](t.me/hacker_x_official_777)  
-🔗 Tᴇʟᴇɢʀᴀᴍ: [Oᴡɴᴇʀ](t.me/hacker_x_official_777)  
-🌍 GɪᴛHᴜʙ: [@ꜱᴘɪᴅᴇʏᴏғғɪᴄɪᴀʟ𝟽𝟽𝟽](github.com/spideyofficial777)
-Cʟɪᴄᴋ Hᴇʀᴇ
+👑 ᴏᴡɴᴇʀ:  <a href='https://telegram.me/ʜacker_x_official_777'>ꜱᴘɪᴅᴇʏ</a>
+🔗 ᴛᴇʟᴇɢʀᴀᴍ: <a href='https://telegram.me/spideyofficial777'>ꜱᴘɪᴅᴇʏᴏғғɪᴄɪᴀʟ𝟽𝟽𝟽</a>  
+🌍 ɢɪᴛʜᴜʙ: <a href='https://telegram.me/Hacker_x_official_777'>ꜱᴘɪᴅᴇʏ ᴏғғɪᴄɪᴀʟ</a>
 ━━━━━━━━━━━━━━━━━━━━━
-🔥 Iɴɴᴏᴠᴀᴛɪɴɢ ᴛʜᴇ Fᴜᴛᴜʀᴇ, Oɴᴇ Cᴏᴅᴇ ᴀᴛ ᴀ Tɪᴍᴇ! 🔥
+🔥 ɪɴɴᴏᴠᴀᴛɪɴɢ ᴛʜᴇ ғᴜᴛᴜʀᴇ, ɴᴇ ᴄᴏᴅᴇ ᴀᴛ ᴀ ᴛɪᴍᴇ! 🔥
 ━━━━━━━━━━━━━━━━━━━━━</b>
 """
-    NEW_USER_LOG = """<b>#New_User {bot_name}\n\n
-≈  ɪᴅ: <code>{user_id}</code>\n
-≈  ɴᴀᴍᴇ: {user_mention}\n
-≈  ᴜꜱᴇʀɴᴀᴍᴇ: @{username}\n
-≈  ɢʀᴏᴜᴘ: {chat_title} </b>"""
+    NEW_USER_LOG = """
+<b>🆕 ɴᴇᴡ ᴜꜱᴇʀ ᴀʟᴇʀᴛ !</b>
 
+<b>╭➤ 🧑‍💻 ɴᴀᴍᴇ :</b> {user_mention}
+<b>╰➤ 🆔 :</b> <code>{user_id}</code>
+
+<b>╭➤ 🌐 ᴜꜱᴇʀɴᴀᴍᴇ :</b> {username}
+<b>╰➤ 🗣️ ᴄʜᴀᴛ ᴛʏᴘᴇ :</b> <code>{chat_title}</code>
+
+<b>⚙️ ʙᴏᴛ ɴᴀᴍᴇ :</b> <code>{bot_name}</code>
+<b>🕐 ᴊᴏɪɴᴇᴅ ᴀᴛ :</b> <code>{time}</code>
+"""
 
     GSTART_TXT = """<b>ʜᴇʏ {},\n\nɪ ᴀᴍ ᴛʜᴇ ᴍᴏꜱᴛ ᴘᴏᴡᴇʀꜰᴜʟ ᴀᴜᴛᴏ ʀᴇǫᴜᴇꜱᴛ ᴀᴄᴄᴇᴘᴛ ʙᴏᴛ ᴡɪᴛʜ ᴘʀᴇᴍɪᴜᴍ ꜰᴇᴀᴛᴜʀᴇꜱ.\n\nᴍᴀɴᴛᴀɪɴᴇᴅ ʙʏ : <a href='https://telegram.me/Hacker_x_official_777'>ꜱᴘɪᴅᴇʏ</a></b>"""
 
