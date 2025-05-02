@@ -40,14 +40,14 @@ from pyrogram.enums import ChatMembersFilter
 API_ID = ""
 API_HASH = ""
 BOT_TOKEN = ""
-CHANNEL_IDS = [-1001959922658, -1002433552221, -1002470391435]
+CHANNEL_IDS = [-1001959922658, -1002433552221, -1002470391435, -1002252585703]
 LOG_CHANNEL = -1002294764885
 ADMINS = [5518489725]
 MONGO_URI = ""
 
 
 # Image URLs
-xyz_welome_image_url = ""
+#xyz_welome_image_url = ""
 background_image_url = "https://i.ibb.co/RymDMxS/66e7d1b6.jpg"
 welcome_image = "https://envs.sh/v3t.jpg"
 
