@@ -120,7 +120,7 @@ python3 bot.py
 </h3>
 
 <p align="center">
-<a href="https://telegram.me/spideyofficia-_l777"><img src="https://img.shields.io/badge/-Support%20Group-blue.svg?style=for-the-badge&logo=Telegram"></a>
+<a href="https://telegram.me/spideyofficial_777"><img src="https://img.shields.io/badge/-Support%20Group-blue.svg?style=for-the-badge&logo=Telegram"></a>
 </p>
 <p align="center">
 <a href="https://t.me/+QVmLP_hlHNw3M2I1"><img src="https://img.shields.io/badge/-Support%20Channel-blue.svg?style=for-the-badge&logo=Telegram"></a>
@@ -135,6 +135,6 @@ python3 bot.py
 - <b>[ꜱᴘɪᴅᴇʏ](https://github.com/Spideyofficial777)  ➻  [sᴏᴍᴇᴛʜɪɴɢ](https://t.me/+QVmLP_hlHNw3M2I1) </b>
 <b> ➻  [sᴏᴍᴇᴛʜɪɴɢ](https://github.com/Spideyofficial777) </b>
 
-<b> ᴀɴᴅ ᴀʟʟ [ᴛʜᴇ ᴄᴏɴᴛʀɪʙᴜᴛᴏʀs](https://t.me/+QVmLP_hlHNw3M2I1) ᴡʜᴏ ʜᴇʟᴩᴇᴅ ɪɴ ᴍᴀᴋɪɴɢ ʟᴜᴄʏ ʀᴏʙᴏᴛ ᴜsᴇғᴜʟ & ᴩᴏᴡᴇʀғᴜʟ 🖤 </b>
+<b> ᴀɴᴅ ᴀʟʟ [ᴛʜᴇ ᴄᴏɴᴛʀɪʙᴜᴛᴏʀs](https://t.me/+QVmLP_hlHNw3M2I1) ᴡʜᴏ ʜᴇʟᴩᴇᴅ ɪɴ ᴍᴀᴋɪɴɢ [ꜱᴘɪᴅᴇʏ] ʀᴏʙᴏᴛ ᴜsᴇғᴜʟ & ᴩᴏᴡᴇʀғᴜʟ 🖤 </b>
 
 ━━━━━━━━━━━━━━━━━━━━
