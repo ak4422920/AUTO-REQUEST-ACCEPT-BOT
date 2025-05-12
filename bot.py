@@ -48,7 +48,7 @@ MONGO_URI = ""
 
 # Image URLs
 #xyz_welome_image_url = ""
-background_image_url = "https://i.ibb.co/RymDMxS/66e7d1b6.jpg"
+background_image_url = "https://envs.sh/kpW.jpg"
 welcome_image = "https://envs.sh/v3t.jpg"
 
 # Initialize the bot
@@ -68,12 +68,12 @@ async def approve_join_request(_, message):
                 [
                     InlineKeyboardButton(
                         "🔔 Sᴜʙsᴄʀɪʙᴇ Tᴏ Oᴜʀ Cʜᴀɴɴᴇʟ",
-                        url="https://youtube.com/@spidey_official_777",
+                        url="https://t.me/Cineoriginals",
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "💬 Cᴏɴᴛᴀᴄᴛ Sᴜᴘᴘᴏʀᴛ", url="https://t.me/hacker_x_official_777"
+                        "💬 Cᴏɴᴛᴀᴄᴛ Sᴜᴘᴘᴏʀᴛ", url="https://t.me/+U9ABfC7hu1EyZjU1"
                     )
                 ],
             ]
@@ -124,10 +124,10 @@ async def start(bot, message):
         buttons = [
             [InlineKeyboardButton('• ᴀᴅᴅ ᴍᴇ ᴛᴏ ᴜʀ ᴄʜᴀᴛ •', url=f'http://t.me/{temp.U_NAME}?startgroup=true')],
             [
-                InlineKeyboardButton('• ᴍᴀsᴛᴇʀ •', url="https://t.me/hacker_x_official_777"),
-                InlineKeyboardButton('• sᴜᴘᴘᴏʀᴛ •', url='https://t.me/deathchatting_world')
+                InlineKeyboardButton('• ᴍᴀsᴛᴇʀ •', url="https://t.me/The_SonGoku"),
+                InlineKeyboardButton('• sᴜᴘᴘᴏʀᴛ •', url='https://t.me/+U9ABfC7hu1EyZjU1')
             ],
-            [InlineKeyboardButton('• ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ •', url="https://t.me/+9tdbATrOMLNlN2I1")]
+            [InlineKeyboardButton('• ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ •', url="https://t.me/AkMoviesHubBackup")]
         ]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply(script.GSTART_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
@@ -160,12 +160,12 @@ async def start(bot, message):
 
         keyboard = InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("➕ Aᴅᴅ Mᴇ ᴛᴏ Yᴏᴜʀ Cʜᴀɴɴᴇʟ ➕", url="https://t.me/SPIDER_MAN_GAMING_bot?startchannel=Bots4Sale&admin=invite_users+manage_chat")],
-                [InlineKeyboardButton("🚀 Cʜᴀɴɴᴇʟ", url="https://t.me/+cMlrPqMjUwtmNTI1"),
+                [InlineKeyboardButton("➕ Aᴅᴅ Mᴇ ᴛᴏ Yᴏᴜʀ Cʜᴀɴɴᴇʟ ➕", url="https://t.me/Autoaprrovejoinacceptbot?startchannel=Bots4Sale&admin=invite_users+manage_chat")],
+                [InlineKeyboardButton("🚀 Cʜᴀɴɴᴇʟ", url="https://t.me/marvel_episode"),
                  InlineKeyboardButton("💬 Sᴜᴘᴘᴏʀᴛ", callback_data="group_info")],
                 [InlineKeyboardButton("ℹ️ Aʙᴏᴜᴛ", callback_data="about"),
                  InlineKeyboardButton("📃 Fᴇᴀᴛᴜʀᴇs", callback_data="features")],
-                [InlineKeyboardButton("➕  Aᴅᴅ Mᴇ ᴛᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ➕", url="https://t.me/SPIDER_MAN_GAMING_bot?startgroup=true")]
+                [InlineKeyboardButton("➕  Aᴅᴅ Mᴇ ᴛᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ➕", url="https://t.me/Autoaprrovejoinacceptbot?startgroup=true")]
             ]
         )
 
@@ -199,7 +199,7 @@ async def start(bot, message):
             photo=welcome_image,
             caption=f"<b>⚠️ Access Denied! ⚠️\n\n🔥 Hello {message.from_user.mention}!\n\n"
                     "You need to join all required channels before proceeding!\n\n"
-                    "👉 [✨ Join Now ✨](https://t.me/SPIDEYOFFICIAL777)</b>",
+                    "👉 [✨ Join Now ✨](https://t.me/marvel_episode)</b>",
             reply_markup=keyboard
         )
 
@@ -220,7 +220,7 @@ async def get_channel_link(client: Client, channel_id: int) -> str:
         return invite_link  
     except Exception as e:
         print(f"Error fetching channel link: {e}")
-        return "https://t.me/SPIDEYOFFICIAL777"  # Default backup link
+        return "https://t.me/Cineoriginals"  # Default backup link
 
 
 
@@ -235,11 +235,11 @@ async def check_subscription(_, callback_query: CallbackQuery):
         keyboard = InlineKeyboardMarkup(
             [
                 [InlineKeyboardButton("➕ Aᴅᴅ Mᴇ ᴛᴏ Yᴏᴜʀ Cʜᴀɴɴᴇʟ ➕", 
-                    url="https://t.me/SPIDER_MAN_GAMING_bot?startchannel=Bots4Sale&admin=invite_users+manage_chat")],
-                [InlineKeyboardButton("🚀 Cʜᴀɴɴᴇʟ", url="https://t.me/+cMlrPqMjUwtmNTI1"), 
-                 InlineKeyboardButton("💬 Sᴜᴘᴘᴏʀᴛ", url="https://t.me/SPIDEYOFFICIAL777")],
+                    url="https://t.me/Autoaprrovejoinacceptbot?startchannel=Bots4Sale&admin=invite_users+manage_chat")],
+                [InlineKeyboardButton("🚀 Cʜᴀɴɴᴇʟ", url="https://t.me/marvel_episode"), 
+                 InlineKeyboardButton("💬 Sᴜᴘᴘᴏʀᴛ", url="https://t.me/+U9ABfC7hu1EyZjU1")],
                 [InlineKeyboardButton("➕ Aᴅᴅ Mᴇ ᴛᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ➕", 
-                    url="https://t.me/SPIDER_MAN_GAMING_bot?startgroup=true")]
+                    url="https://t.me/Autoaprrovejoinacceptbot?startgroup=true")]
             ]
         )
 
@@ -286,7 +286,7 @@ async def on_callback_query(_, callback_query: CallbackQuery):
                         "ʀᴇᴍᴏᴠᴇʙɢ", url="https://example.com/removebg"
                     ),
                     InlineKeyboardButton(
-                        "ʜᴀᴄᴋs", url="https://github.com/Spideyofficial777"
+                        "botz", url="https://t.me/AKMovieBotz"
                     ),
                 ],
                 [
@@ -297,12 +297,12 @@ async def on_callback_query(_, callback_query: CallbackQuery):
                     InlineKeyboardButton("Oᴡɴᴇʀ", callback_data="spidey"),
                 ],
                 [
-                    InlineKeyboardButton("Mᴏᴠɪᴇs", url="https://example.com/movies"),
+                    InlineKeyboardButton("Mᴏᴠɪᴇs", url="https://t.me/aksearch"),
                     InlineKeyboardButton(
-                        "Uᴘᴅᴀᴛᴇs", url="https://t.me/live_update_channel"
+                        "Uᴘᴅᴀᴛᴇs", url="https://t.me/AkMoviesHubBackup"
                     ),
                     InlineKeyboardButton(
-                        "Sᴜᴘᴘᴏʀᴛ", url="https://t.me/SPIDEYOFFICIAL777"
+                        "Sᴜᴘᴘᴏʀᴛ", url="https://t.me/+U9ABfC7hu1EyZjU1"
                     ),
                 ],
                 [InlineKeyboardButton("⋞ Back", callback_data="back")],
@@ -323,7 +323,7 @@ async def on_callback_query(_, callback_query: CallbackQuery):
                 [InlineKeyboardButton("‼️ ᴅɪꜱᴄʟᴀɪᴍᴇʀ ‼️", callback_data="disclaimer")],
                 [
                     InlineKeyboardButton(
-                        "• ᴠɪsɪᴛ ᴏᴜʀ ᴄᴏᴍᴍᴜɴɪᴛʏ •", url="t.me/SPIDEYOFFICIAL_777"
+                        "• ᴠɪsɪᴛ ᴏᴜʀ ᴄᴏᴍᴍᴜɴɪᴛʏ •", url="t.me/Cineoriginals"
                     )
                 ],
                 [
@@ -350,7 +350,7 @@ async def on_callback_query(_, callback_query: CallbackQuery):
             [
                 [
                     InlineKeyboardButton(
-                        "📲 ᴄᴏɴᴛᴀᴄᴛ ᴛᴏ ᴏᴡɴᴇʀ", url="https://t.me/hacker_x_official_777"
+                        "📲 ᴄᴏɴᴛᴀᴄᴛ ᴛᴏ ᴏᴡɴᴇʀ", url="https://t.me/The_SonGoku"
                     )
                 ],
                 [InlineKeyboardButton("⪻ ʙᴀᴄᴋ", callback_data="about")],
@@ -377,11 +377,11 @@ async def on_callback_query(_, callback_query: CallbackQuery):
                 [
                     InlineKeyboardButton(
                     "➕ Aᴅᴅ Mᴇ ᴛᴏ Yᴏᴜʀ Cʜᴀɴɴᴇʟ ➕",
-                    url="https://t.me/SPIDER_MAN_GAMING_bot?startchannel=Bots4Sale&admin=invite_users+manage_chat",
+                    url="https://t.me/Autoaprrovejoinacceptbot?startchannel=Bots4Sale&admin=invite_users+manage_chat",
                 )
                 ],
                 [
-                    InlineKeyboardButton("🚀 Channel", url="https://t.me/SPIDEYOFFICIAL_777"),
+                    InlineKeyboardButton("🚀 Channel", url="https://t.me/marvel_episode"),
                     InlineKeyboardButton("💬 Sᴜᴘᴘᴏʀᴛ", callback_data="group_info"),
             ],
             [
@@ -391,7 +391,7 @@ async def on_callback_query(_, callback_query: CallbackQuery):
                 [
                     InlineKeyboardButton(
                     "➕ Aᴅᴅ Mᴇ ᴛᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ➕",
-                    url="https://t.me/SPIDER_MAN_GAMING_bot?startgroup=true",
+                    url="https://t.me/Autoaprrovejoinacceptbot?startgroup=true",
                 )
             ],
         ]
@@ -411,24 +411,24 @@ async def on_callback_query(_, callback_query: CallbackQuery):
         buttons = [
             [
                 InlineKeyboardButton(
-                    "× ᴀʟʟ ᴏᴜʀ ʟɪɴᴋꜱ ×", url="https://t.me/SPIDEYOFFICIAL777"
+                    "× ᴀʟʟ ᴏᴜʀ ʟɪɴᴋꜱ ×", url="https://t.me/Cineoriginals"
                 )
             ],
             [
-                InlineKeyboardButton("• ɢʀᴏᴜᴘ •", url="https://t.me/+-eCz1o7dfZ0wMmI1"),
+                InlineKeyboardButton("• ɢʀᴏᴜᴘ •", url="https://t.me/+U9ABfC7hu1EyZjU1"),
                 InlineKeyboardButton(
-                    "• ᴜᴘᴅᴀᴛᴇs •", url="https://t.me/+9tdbATrOMLNlN2I1"
+                    "• ᴜᴘᴅᴀᴛᴇs •", url="https://t.me/AkMoviesHubBackup"
                 ),
             ],
             [
-                InlineKeyboardButton("• ʜᴀᴄᴋ •", url="https://t.me/+cMlrPqMjUwtmNTI1"),
+                InlineKeyboardButton("• ʜᴀᴄᴋ •", url="https://t.me/AKMovieBotz"),
                 InlineKeyboardButton(
-                    "• ᴍᴏᴠɪᴇғʟɪx •", url="https://t.me/SPIDEYOFFICIAL_777"
+                    "• ᴍᴏᴠɪᴇ •", url="https://t.me/aksearch"
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    "• ᴀɴɪᴍᴇ ᴄʀᴜɪsᴇ •", url="https://t.me/+4nyaulfn0sliZTE1"
+                    "• ᴀɴɪᴍᴇ •", url="https://t.me/Cineoriginals"
                 )
             ],
             [InlineKeyboardButton("⪻ ʙᴀᴄᴋ •", callback_data="back")],
@@ -553,7 +553,7 @@ async def broadcast_users(bot, message):
                 f"👥 **Total Users:** `{total_users}`\n"
                 f"✅ **Successful:** `{success}`\n"
                 f"❌ **Failed:** `{failed}`\n\n"
-                f"🔥 **Powered by Spidey** 🕷️"
+                f"🔥 **Powered by AKMovieBotz** 🕷️"
             )
     
     await Spidey.edit_text(
@@ -562,8 +562,8 @@ async def broadcast_users(bot, message):
         f"✅ **Successful:** `{success}`\n"
         f"❌ **Failed:** `{failed}`\n"
         f"🕒 **Time Taken:** `{round(time.time() - start_time, 2)} sec`\n\n"
-        f"🚀 **Broadcast by [Spidey](https://t.me/SPIDEYOFFICIAL777)**\n"
-        f"🔹 **Follow [Spidey Network](https://t.me/SPIDEY_CINEMA_X_AI_BOT)**"
+        f"🚀 **Broadcast by [AKMovieBotz](https://t.me/AKMovieBotz)**\n"
+        f"🔹 **Follow [Cineoriginals](https://t.me/Cineoriginals)**"
     )
 @app.on_message(filters.command("send") & filters.user(ADMINS))
 async def send_msg(bot, message):
