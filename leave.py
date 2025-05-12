@@ -15,11 +15,11 @@ MEDIA_FILES = [
 ]
 
 # 🔹 Groups & Channels to Track
-CHAT_IDS = [-1002453024937, -1001959922658, -1002470391435, -1002481537934]
+CHAT_IDS = [-1002442422204, -1002208277524]
 
 # 🔹 Support & Rejoin Links
-SUPPORT_CHAT = "https://t.me/hacker_x_official_777"
-CHANNEL_LINK = "https://t.me/spideyofficial777"
+SUPPORT_CHAT = "https://t.me/+U9ABfC7hu1EyZjU1"
+CHANNEL_LINK = "https://t.me/Cineoriginals"
 
 def register_leave_handler(app: Client):
     @app.on_chat_member_updated(filters.group)
